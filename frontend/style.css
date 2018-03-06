@@ -1,0 +1,29 @@
+.ui.navbar.inverted.menu{
+  position: relative;
+  visibility: initial;
+  color: red;
+  z-index: 2;
+  font-size: 2rem;
+  background: #F6A7AF;
+}
+.ui.sidebar.vertical.inverted.menu{
+  position: fixed;
+  visibility:initial;
+  z-index: 1;
+  background: #7AC5B6;
+}
+
+#mainColumn{
+  position: absolute;
+  left: 300px;
+  top: 150px;
+}
+.card{
+  background: #7AC5B6;
+}
+
+.ui.longer.modal {
+  position: sticky;
+  left: 300px;
+  top: 150px;
+}
