@@ -11,19 +11,20 @@
   visibility:initial;
   z-index: 1;
   background: #7AC5B6;
-}
-
-#mainColumn{
-  position: absolute;
-  left: 300px;
-  top: 150px;
-}
-.card{
-  background: #7AC5B6;
+  font-size: 2rem;
 }
 
 .ui.longer.modal {
   position: sticky;
   left: 300px;
   top: 150px;
+}
+.modal{
+  position: absolute;
+  left: 300px;
+  top: 300px;
+}
+.visible.content{
+  width:200px;
+  height:200px;
 }
