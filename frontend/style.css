@@ -1,19 +1,11 @@
 .ui.navbar.inverted.menu{
-  position: relative;
-  visibility: initial;
-  color: red;
-  z-index: 2;
-  font-size: 2rem;
-  background: #F6A7AF;
+ position: relative;
+ visibility: initial;
+ color: #fff;
+ z-index: 2;
+ font-size: 2rem;
+ background: #5C7D77;
 }
-.ui.sidebar.vertical.inverted.menu{
-  position: fixed;
-  visibility:initial;
-  z-index: 1;
-  background: #7AC5B6;
-  font-size: 2rem;
-}
-
 .ui.longer.modal {
   position: sticky;
   left: 300px;
@@ -25,6 +17,48 @@
   top: 300px;
 }
 .visible.content{
-  width:200px;
+  width:290px;
   height:200px;
+}
+.column{
+  padding:0px !important;
+}
+.ui.button{
+  padding:0px !important;
+}
+.content{
+  padding:0px !important;
+}
+.ui.card{
+  margin:0px;
+}
+.right{
+   position: absolute;
+   right: 2px;
+}
+
+.image.container{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom.left{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.header{
+  background: rgba(255,255,255,0);
+}
+
+.name{
+  color: white;
+  font-size: 2rem;
+}
+
+.description{
+  background: rgba(255,255,255,0);
 }

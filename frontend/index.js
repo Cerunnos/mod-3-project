@@ -21,21 +21,22 @@ document.addEventListener("DOMContentLoaded", function() {
       const cuisine = json[i].cuisine
       const location = json[i].location
       const img = json[i].img_url
-      console.log(img)
       div.innerHTML =
-        `<div class="ui fluid card">
-        <div class="content">
-        <img src="./pictures/${img}" class="visible content">
-          <div class="header">
-            ${name}
+        `<div class="ui card">
+         <div class="content">
+           <div class="image container">
+           <button class="ui button">
+           <img src="./pictures/${img}.png" id=${json[i].id} class="visible content">
+             <div class="bottom left">
+               <div class="header">
+                 <p id=${json[i].id} class="restaurant name">${name}</p>
+               </div>
+             </div>
+           </div>
           </div>
-          <div class="meta">
-            ${cuisine}
-          </div>
-          <div class="description">
-            ${location}
-          </div>
-      </div>`
+        </div>`
+
+
       if (counter === 0) {
         columnOne.appendChild(div)
         counter++
@@ -50,10 +51,10 @@ document.addEventListener("DOMContentLoaded", function() {
         counter = 0
       }
       $('.ui.modal.1').modal('attach events', '.ui.button', 'show')
-      // div.appendChild(img)
       button = document.getElementById(json[i].id)
       button.addEventListener("click", event => {
         event.preventDefault()
+        modalContent.innerHTML = ""
         fetchItems(event)
       })
     }
@@ -66,13 +67,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function displayItems(json, event) {
-    console.log(event.target.id)
     for (i = 0; i < json.length; i++) {
       if (json[i].restaurant_id == event.target.id) {
         const div = document.createElement("div")
-        div.innerText += json[i].name
-        modalContent.innerHTML = ""
+        div.innerText += `${json[i].name} - $${json[i].price}`
         modalContent.appendChild(div)
+        const button = document.createElement("button")
+        button.innerText = "Add To Cart"
+        div.appendChild(button)
         console.log(div)
       }
     }
@@ -82,8 +84,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// `Restaurant Name:${name}, Cuisine: ${cuisine}, Address: ${location}`
-// const button = document.createElement("button")
-// button.innerText = "Order"
-// button.setAttribute("id", json[i].id)
-// div.appendChild(button)
+// <div class="ui card">
+//    <div class="content">
+//      <div class="image container">
+//      <button class="ui button">
+//      <img src="./pictures/${img}.png" id=${json[i].id} class="visible content">
+//        <div class="bottom left">
+//          <div class="header">
+//            <p class="restaurant name">${name}</p>
+//          </div>
+//        </div>
+//      </div>
+//     </div>
+//   </div>`
